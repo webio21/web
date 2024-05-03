@@ -1,0 +1,178 @@
+﻿<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Starman®</title>
+<link rel="shortcut icon" href="favicon.ico">
+<style>
+        body {font-size: 9pt; color: #FFFFFF;}
+        a {text-decoration: none;
+            color: #FFFFFF;}
+        a:hover {text-decoration: underline;}
+</style>
+	<style>
+		.typewriter {
+			font-size: 45px;
+			font-family: Verdana;
+			border-right: 8px solid #FFFFFF;
+			white-space: nowrap;
+			overflow: hidden;
+			-webkit-animation: typing 4s steps(20, end), blink-caret .75s step-end infinite;
+			animation: typing 4s steps(20, end), blink-caret .75s step-end infinite;
+		}
+
+		/* The typing effect */
+		@keyframes typing {
+			from { width: 0 }
+			to { width: 100% }
+		}
+
+		@-webkit-keyframes typing {
+			from { width: 0 }
+			to { width: 100% }
+		}
+
+		/* The typewriter caret/blinking cursor */
+		@keyframes blink-caret {
+			from, to { border-color: transparent }
+			50% { border-color: #FFFFFF; }
+		}
+
+		@-webkit-keyframes blink-caret {
+			from, to { border-color: transparent }
+			50% { border-color: #FFFFFF; }
+		}
+	</style>
+
+</head>
+
+<body bgcolor="#00d2ff" link="#FFFFFF" vlink="#FFFFFF">
+<table border="0" width="100%" cellspacing="0" cellpadding="0" height="500" style="color: #FFFFFF">
+  <tr>
+    <td align="center"><table border="0" width="1024" style="font-size: 9pt; color: #FFFFFF" cellpadding="2">
+        <tr>
+          <td width="1024" align="center"><img border="0" src="character.gif" width="350" height="400"><br>
+            <b><font face="Verdana" style="font-size: 18pt">Starman®Universe<br>スターマン ユニバース</font></b><p><br>
+
+		<div align="center">
+<span class="typewriter" style="color: #FFFFFF;"></span>
+<script>
+  let texts = [
+    'Starman is creating miracles...',
+    'Please stay childlike with us...',
+    'Stay tuned for our products...',
+    'The revolution of hearables is coming...',
+  ];
+  let index = 0;
+  let requestId = null;
+  let isTyping = false;
+  let isDeleting = false;
+  let typingSpeed = 100;
+  let deletingSpeed = 50;
+  let pauseTime = 2500;
+  let waitTime = 100;
+
+  function startTypewriter() {
+    if (isTyping || isDeleting) return;
+    cancelAnimationFrame(requestId);
+    isTyping = true;
+    document.querySelector('.typewriter').classList.remove('cursor');
+    setTimeout(function() {
+      if (!isDeleting && isTyping) {
+        requestId = requestAnimationFrame(type);
+      }
+    }, waitTime);
+  }
+
+  function type() {
+    let text = texts[index];
+    let length = text.length;
+    if (isTyping && length > document.querySelector('.typewriter').textContent.length) {
+      document.querySelector('.typewriter').textContent += text.charAt(document.querySelector('.typewriter').textContent.length);
+      requestId = requestAnimationFrame(type);
+    } else {
+      isTyping = false;
+      isDeleting = true;
+      document.querySelector('.typewriter').classList.add('cursor');
+      setTimeout(function() {
+        requestId = requestAnimationFrame(deleteChar);
+      }, pauseTime);
+    }
+  }
+
+  function deleteChar() {
+    let text = texts[index];
+    let length = text.length;
+    if (isDeleting && document.querySelector('.typewriter').textContent.length > 0) {
+      document.querySelector('.typewriter').textContent = document.querySelector('.typewriter').textContent.substring(0, document.querySelector('.typewriter').textContent.length - 1);
+      requestId = requestAnimationFrame(deleteChar);
+    } else {
+      isDeleting = false;
+      index++;
+
+if (index === 4 || index === 5 || index === 6) {
+  document.querySelector('.typewriter').style.color = '#FFFFFF';
+} else {
+  document.querySelector('.typewriter').style.color = '#FFFFFF';
+}
+
+      if (index > texts.length - 1) {
+        index = 0;
+      }
+      setTimeout(function() {
+        startTypewriter();
+      }, typingSpeed);
+    }
+  }
+
+  startTypewriter();
+  window.addEventListener('focus', startTypewriter);
+  window.addEventListener('blur', function() {
+    cancelAnimationFrame(requestId);
+    isTyping = false;
+    isDeleting = false;
+    document.querySelector('.typewriter').textContent = '';
+  });
+</script>
+<p><br><p><br>
+			<table style="width:100%">
+    <tr>
+        <td align="center">
+            <a href="earphones"><img border="0" src="earphones.jpg" width="160" height="160">
+            <p><font face="Verdana" style="font-size: 16pt">EARPHONES</a></font><br><font face="Verdana" style="font-size: 9pt">For presale</font></p>
+        </td>
+        <td align="center">
+            <a href="hearables"><img border="0" src="hearables.jpg" width="160" height="160">
+            <p><font face="Verdana" style="font-size: 16pt">HEARABLES</a></font><br><font face="Verdana" style="font-size: 9pt">Innovative Products</font></p>
+        </td>
+        <td align="center">
+            <a href="aisocial"><img border="0" src="aisocial.jpg" width="160" height="160">
+            <p><font face="Verdana" style="font-size: 16pt">AI SOCIAL</a></font><br><font face="Verdana" style="font-size: 9pt">In Progress</font></p>
+        </td>
+        <td align="center">
+            <a href="apparel"><img border="0" src="apparel.jpg" width="160" height="160">
+            <p><font face="Verdana" style="font-size: 16pt">APPAREL</a></font><br><font face="Verdana" style="font-size: 9pt">Coming Soon</font></p>
+        </td>
+    </tr>
+</table>
+                <p><br><p>
+            <p align="center"><a href="hearables"><img border="0" src="banner.jpg" width="1024" height="576"><br>
+<br><img border="0" src="speaker.jpg" width="1024" height="576"></a><p>
+              <br>
+          </td>
+        </tr>
+      </table></td>
+  </tr>
+</table>
+
+				</td>
+	</tr>
+	</table>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="center" style="color: #FFFFFF" height="40"><a href="https://twitter.com/StarX2022"><img border="0" src="x.png" width="40" height="40"></a>&nbsp; &nbsp; &nbsp; <a href="mailto:starmanio@outlook.com"><img border="0" src="email.png" width="40" height="40"></a><br><br>
+<font face="Verdana" style="font-size: 12pt"><a href="about">About Us</a></font> — <font face="Verdana" style="font-size: 12pt"><a href="teams">Teams</a></font> — <font face="Verdana" style="font-size: 12pt"><a href="contact">Contact Us</a></font> — <font face="Verdana" style="font-size: 12pt"><a href="privacy">Privacy Policy</a></font><br>
+<span style="font-size: 9pt"><b>- Starman Inc. -</b><br>30 N Gould St Ste R Sheridan, WY 82801<br>Copyright © Starman Inc. All Rights Reserved.</span></td>
+  </tr>
+</table>
+</body>
+</html>
